@@ -1,4 +1,13 @@
-package org.example;
+package benchmark;
+
+import algorithms.EditDistance;
+import algorithms.KmpSearch;
+import algorithms.NaiveSearch;
+import algorithms.RecursiveEditDistance;
+import algorithms.StringSearch;
+import algorithms.TableEditDistance;
+import algorithms.TwoRowEditDistance;
+import metrics.Metrics;
 
 import java.io.PrintWriter;
 import java.nio.file.Files;

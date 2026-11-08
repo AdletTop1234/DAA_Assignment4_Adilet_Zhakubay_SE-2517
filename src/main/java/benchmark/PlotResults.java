@@ -1,4 +1,4 @@
-package org.example;
+package benchmark;
 
 import javax.imageio.ImageIO;
 import java.awt.BasicStroke;

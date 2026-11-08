@@ -29,7 +29,7 @@ Seven JUnit 5 tests cover all assignment reference values, empty strings, overla
 After building:
 
 ```shell
-java -cp target/classes org.example.Experiment
+java -cp target/classes benchmark.Experiment
 ```
 
 Or build and run in one Windows command:
@@ -41,12 +41,14 @@ powershell -ExecutionPolicy Bypass -File .\run.ps1 experiment
 This overwrites `results/results.csv`, `results/environment.txt` and four PNG plots. It uses seed 2517, two warm-ups and five measured runs for every case. Inputs, answers and operation counters repeat exactly; elapsed times vary. Re-running the experiment does not rewrite the report's recorded times. To redraw plots from an existing CSV without measuring again:
 
 ```shell
-java -cp target/classes org.example.PlotResults
+java -cp target/classes benchmark.PlotResults
 ```
 
 ## Files and conventions
 
-- `src/main/java/org/example/`: algorithms, metrics, generator, experiment and PNG plotting.
+- `src/main/java/algorithms/`: edit-distance and string-search interfaces and implementations.
+- `src/main/java/benchmark/`: input generator, experiment and PNG plotting.
+- `src/main/java/metrics/`: operation and storage counters.
 - `src/test/java/org/example/AlgorithmsTest.java`: JUnit 5 tests.
 - `results/results.csv`: one row per timed invocation, 330 rows total.
 - `results/plots/`: four charts generated directly from the CSV.

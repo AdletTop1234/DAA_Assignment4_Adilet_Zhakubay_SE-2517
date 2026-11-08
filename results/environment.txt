@@ -1,0 +1,6 @@
+Java: 27.0.1.0.2
+OS: Windows 10 amd64
+Available processors: 8
+Seed: 2517
+Warmups: 2
+Timed runs: 5

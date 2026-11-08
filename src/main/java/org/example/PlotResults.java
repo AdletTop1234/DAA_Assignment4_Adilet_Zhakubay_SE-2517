@@ -12,7 +12,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.function.Predicate;
@@ -26,8 +25,8 @@ public class PlotResults {
 
     public static void main(String[] args) throws Exception {
         List<Row> rows = new ArrayList<>();
-        for (String line : Files.readAllLines(Path.of("results/results.csv")).subList(1,
-                Files.readAllLines(Path.of("results/results.csv")).size())) {
+        List<String> lines = Files.readAllLines(Path.of("results/results.csv"));
+        for (String line : lines.subList(1, lines.size())) {
             String[] c = line.split(",");
             rows.add(new Row(c[0], c[1], Integer.parseInt(c[2]), Double.parseDouble(c[5]),
                     Long.parseLong(c[6]), Long.parseLong(c[7]), Long.parseLong(c[8])));

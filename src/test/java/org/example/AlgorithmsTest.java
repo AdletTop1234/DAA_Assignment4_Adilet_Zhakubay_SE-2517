@@ -24,7 +24,7 @@ class AlgorithmsTest {
             assertEquals(3, algorithm.distance("abc", ""));
             assertEquals(0, algorithm.distance("", ""));
             assertEquals(0, algorithm.distance("abc", "abc"));
-            assertEquals(1, algorithm.distance("Abylai Han", "Abylai Khan"));
+            assertEquals(2, algorithm.distance("Abylai Han", "Abylai Khan")); // Case-sensitive: H -> K, insert h.
         }
     }
 

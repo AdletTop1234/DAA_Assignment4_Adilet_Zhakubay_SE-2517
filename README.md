@@ -49,7 +49,7 @@ java -cp target/classes benchmark.PlotResults
 - `src/main/java/algorithms/`: edit-distance and string-search interfaces and implementations.
 - `src/main/java/benchmark/`: input generator, experiment and PNG plotting.
 - `src/main/java/metrics/`: operation and storage counters.
-- `src/test/java/org/example/AlgorithmsTest.java`: JUnit 5 tests.
+- `src/test/java/`: separate JUnit 5 classes for edit distance, LPS, string search and metrics.
 - `results/results.csv`: one row per timed invocation, 330 rows total.
 - `results/plots/`: four charts generated directly from the CSV.
 - `REPORT.md`: design card committed before measurement, results and answers.

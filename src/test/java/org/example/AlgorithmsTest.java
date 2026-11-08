@@ -1,5 +1,12 @@
 package org.example;
 
+import algorithms.EditDistance;
+import algorithms.KmpSearch;
+import algorithms.NaiveSearch;
+import algorithms.RecursiveEditDistance;
+import algorithms.StringSearch;
+import algorithms.TableEditDistance;
+import algorithms.TwoRowEditDistance;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Random;

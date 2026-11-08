@@ -24,6 +24,6 @@ if ($maven) {
 & $mavenPath -B -ntp clean verify
 if ($LASTEXITCODE -ne 0) { throw 'Build or tests failed.' }
 if ($Task -eq 'experiment') {
-    & $java '-Djava.awt.headless=true' -cp target/classes org.example.Experiment
+    & $java '-Djava.awt.headless=true' -cp target/classes benchmark.Experiment
     if ($LASTEXITCODE -ne 0) { throw 'Experiment failed.' }
 }

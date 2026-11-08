@@ -1,4 +1,4 @@
-package org.example;
+package metrics;
 
 /** Counters belong to one algorithm object and are reset for each call. */
 public class Metrics {

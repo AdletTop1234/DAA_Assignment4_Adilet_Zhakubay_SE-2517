@@ -4,9 +4,9 @@ Adilet Zhakubay, SE-2517
 
 City Search & Spell-Check: three Levenshtein distance implementations and two exact string searches. The code uses ordinary Java loops, arrays and lists.
 
-Repository: https://github.com/AdletTop1234/DAA_Assignment4_Adilet_Zhakubay_SE-2517
+Repository: https://github.com/AdletTop1234/DAA_Assignment4_Adilet_Zhakubay_SE-2517/tree/main
 
-Final branch: `main`. Final tag: `v1.0`.
+Submission branch: `main`. Assignment release: `v1.0`. Structured project update: `v1.1`.
 
 ## Build and test
 
@@ -44,7 +44,43 @@ This overwrites `results/results.csv`, `results/environment.txt` and four PNG pl
 java -cp target/classes benchmark.PlotResults
 ```
 
-## Files and conventions
+## Project structure
+
+```text
+src/
+  main/java/
+    algorithms/
+      EditDistance.java
+      RecursiveEditDistance.java
+      TableEditDistance.java
+      TwoRowEditDistance.java
+      StringSearch.java
+      NaiveSearch.java
+      KmpSearch.java
+    benchmark/
+      InputGenerator.java
+      Experiment.java
+      PlotResults.java
+    metrics/
+      Metrics.java
+  test/java/
+    EditDistanceTest.java
+    LpsTest.java
+    StringSearchTest.java
+    MetricsTest.java
+results/
+  results.csv
+  environment.txt
+  plots/
+    edit-work.png
+    edit-storage.png
+    search-comparisons.png
+    search-time.png
+pom.xml
+run.ps1
+README.md
+REPORT.md
+```
 
 - `src/main/java/algorithms/`: edit-distance and string-search interfaces and implementations.
 - `src/main/java/benchmark/`: input generator, experiment and PNG plotting.
@@ -57,6 +93,21 @@ java -cp target/classes benchmark.PlotResults
 Both interfaces expose the same operation within their family. Strings are case-sensitive Java UTF-16 sequences; positions are zero-based UTF-16 indices. Search returns all occurrences including overlaps. An empty pattern throws `IllegalArgumentException`; a longer pattern returns an empty list. Inputs are expected to be non-null. Algorithm instances keep their last call's counters and are intended for one thread.
 
 CSV columns: `algorithm,input,n,m,run,time_ms,work,comparisons,storage_ints,answer,seed`. For edit distance, `work` counts recursive calls (including base cases) or interior DP cells; `answer` is the distance. For search, `comparisons` counts character comparisons, including KMP preprocessing, and `answer` is the number of matches. `storage_ints` counts allocated algorithm array slots, excluding output lists and JVM overhead; zero for recursion does not mean zero stack memory. The charts aggregate the five runs by median.
+
+## Git branches
+
+- `main`: completed project with the merged changes.
+- `refactor/project-structure`: source packages and updated entry points.
+- `test/separate-suites`: four focused test classes.
+- `docs/project-layout`: project tree, commands and branch documentation.
+
+Each work branch has its own commit and is merged into `main` with a merge commit. To see the branch graph:
+
+```shell
+git log --graph --decorate --oneline --all
+```
+
+Tag `v1.0` records the original assignment release. Tag `v1.1` records the reorganized source and tests. The CSV and report contain the original measured results; changing package names does not change the experiment design.
 
 ## Submission
 
